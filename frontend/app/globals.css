@@ -1,0 +1,193 @@
+/* ============================================
+   全局样式文件
+   ============================================
+   包含 Tailwind CSS 指令、全局变量和自定义样式
+*/
+
+/* ============================================
+   Tailwind CSS 指令
+   ============================================
+   导入 Tailwind 的基础、组件和工具类
+*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   CSS 变量定义
+   ============================================
+   定义全局颜色和样式变量
+*/
+:root {
+  /* 前景色（文字颜色）RGB 值 */
+  --foreground-rgb: 17, 24, 39;
+  /* 背景渐变起始色 RGB 值 */
+  --background-start-rgb: 249, 250, 251;
+  /* 背景渐变结束色 RGB 值 */
+  --background-end-rgb: 243, 244, 246;
+  
+  /* 检索策略的自定义颜色 */
+  /* 传统检索 - 紫色 */
+  --color-traditional: 139, 92, 246;
+  /* 图 RAG 检索 - 青色 */
+  --color-graph-rag: 6, 182, 212;
+  /* 组合策略 - 橙色 */
+  --color-combined: 245, 158, 11;
+}
+
+/* ============================================
+   基础样式层
+   ============================================
+   定义全局的基础元素样式
+*/
+@layer base {
+  /* 所有元素的默认边框颜色 */
+  * {
+    @apply border-gray-200;
+  }
+  
+  /* HTML 元素 - 平滑滚动 */
+  html {
+    @apply scroll-smooth;
+  }
+  
+  /* Body 元素 - 默认文字颜色 */
+  body {
+    @apply text-gray-900;
+  }
+}
+
+/* ============================================
+   组件样式层
+   ============================================
+   定义可复用的组件样式
+*/
+@layer components {
+  /* 
+    自定义滚动条样式
+    用于美化消息列表等可滚动区域
+  */
+  .custom-scrollbar::-webkit-scrollbar {
+    @apply w-2;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    @apply bg-gray-100 rounded-full;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 rounded-full hover:bg-gray-400;
+  }
+  
+  /* 
+    检索策略徽章样式
+    用于显示不同的检索方法
+  */
+  /* 传统检索徽章 - 紫色 */
+  .badge-traditional {
+    @apply bg-purple-100 text-purple-700 border-purple-200;
+  }
+  
+  /* 图 RAG 检索徽章 - 青色 */
+  .badge-graph-rag {
+    @apply bg-cyan-100 text-cyan-700 border-cyan-200;
+  }
+  
+  /* 组合策略徽章 - 橙色 */
+  .badge-combined {
+    @apply bg-orange-100 text-orange-700 border-orange-200;
+  }
+  
+  /* 
+    消息气泡样式
+    用于显示聊天消息
+  */
+  /* 用户消息气泡 - 蓝色，右下角尖角 */
+  .message-user {
+    @apply bg-blue-500 text-white rounded-2xl rounded-br-md;
+  }
+  
+  /* 助手消息气泡 - 白色，左下角尖角 */
+  .message-assistant {
+    @apply bg-white text-gray-900 rounded-2xl rounded-bl-md shadow-sm border border-gray-200;
+  }
+  
+  /* 
+    卡片悬停效果
+    用于交互式卡片元素
+  */
+  .card-hover {
+    @apply transition-all duration-200 hover:shadow-md hover:-translate-y-0.5;
+  }
+}
+
+/* ============================================
+   工具类样式层
+   ============================================
+   定义可复用的工具类
+*/
+@layer utilities {
+  /* 文本平衡 - 改善多行文本的视觉效果 */
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  /* 
+    动画工具类
+    用于创建常见的 UI 动画效果
+  */
+  /* 淡入动画 - 0.3 秒内从透明到不透明 */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-in;
+  }
+  
+  /* 向上滑动动画 - 0.3 秒内从下方滑入 */
+  .animate-slide-up {
+    animation: slideUp 0.3s ease-out;
+  }
+  
+  /* 缓慢脉冲动画 - 3 秒循环 */
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+/* ============================================
+   关键帧动画定义
+   ============================================
+   定义动画的具体效果
+*/
+
+/* 淡入动画 - 从完全透明到完全不透明 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* 向上滑动动画 - 从下方 10px 处向上滑动到原位置 */
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   打印样式
+   ============================================
+   定义打印时的样式
+*/
+@media print {
+  /* 打印时隐藏不需要打印的元素 */
+  .no-print {
+    display: none !important;
+  }
+}

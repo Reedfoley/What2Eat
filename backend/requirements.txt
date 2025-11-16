@@ -1,0 +1,37 @@
+# Web 框架和服务器
+fastapi              # 现代 Python Web 框架，用于构建 API
+uvicorn[standard]    # ASGI 服务器，运行 FastAPI 应用
+
+# 数据验证和配置
+pydantic             # 数据验证库，用于请求/响应模型
+pydantic-settings    # Pydantic 设置管理
+
+# 异步 HTTP 客户端
+httpx                # 异步 HTTP 客户端库
+aiofiles             # 异步文件操作库
+
+# 数据库
+neo4j                # Neo4j 图数据库驱动
+pymilvus             # Milvus 向量数据库客户端
+
+# LLM 和嵌入
+openai               # OpenAI API 客户端
+langchain            # LLM 应用框架
+langchain-openai     # LangChain OpenAI 集成
+langchain-community  # LangChain 社区集成
+
+# 数据处理
+numpy                # 数值计算库
+pandas               # 数据处理库
+scikit-learn         # 机器学习库
+
+# 文本处理
+jieba                # 中文分词库
+nltk                 # 自然语言处理工具包
+
+# 工具库
+python-dotenv        # 环境变量加载
+requests             # HTTP 请求库
+tenacity             # 重试库
+pyyaml               # YAML 配置文件解析
+python-json-logger   # JSON 格式日志记录

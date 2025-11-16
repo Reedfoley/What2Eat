@@ -1,0 +1,5 @@
+{
+  // 继承 Next.js 的核心 Web 指标 ESLint 配置
+  // 这个配置包含了 Next.js 推荐的代码质量和性能规则
+  "extends": "next/core-web-vitals"
+}

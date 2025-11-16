@@ -1,0 +1,60 @@
+{
+  "compilerOptions": {
+    // 编译目标：ES2017 是 ES8，支持 async/await 等现代特性
+    "target": "ES2017",
+    
+    // 包含的库：DOM API、迭代器、最新 JavaScript 特性
+    "lib": ["dom", "dom.iterable", "esnext"],
+    
+    // 允许在 TypeScript 项目中使用 JavaScript 文件
+    "allowJs": true,
+    
+    // 跳过库文件的类型检查，加快编译速度
+    "skipLibCheck": true,
+    
+    // 启用严格类型检查，提高代码质量
+    "strict": true,
+    
+    // 不生成编译后的 JavaScript 文件（由 Next.js 处理）
+    "noEmit": true,
+    
+    // 支持 CommonJS 和 ES 模块的互操作
+    "esModuleInterop": true,
+    
+    // 模块系统：使用最新的 ES 模块
+    "module": "esnext",
+    
+    // 模块解析策略：bundler 用于 Next.js
+    "moduleResolution": "bundler",
+    
+    // 允许导入 JSON 文件
+    "resolveJsonModule": true,
+    
+    // 每个文件独立编译，提高编译速度
+    "isolatedModules": true,
+    
+    // JSX 处理：preserve 让 Next.js 处理 JSX 转换
+    "jsx": "preserve",
+    
+    // 增量编译：只编译改变的文件
+    "incremental": true,
+    
+    // Next.js 编译器插件
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    
+    // 路径别名：@/* 映射到项目根目录，简化导入路径
+    "paths": {
+      "@/*": ["./*"]
+    }
+  },
+  
+  // 包含的文件：TypeScript 和 TSX 文件
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  
+  // 排除的目录：node_modules 不需要类型检查
+  "exclude": ["node_modules"]
+}

@@ -1,0 +1,80 @@
+# 后端服务配置
+backend:
+  # 服务器绑定地址：0.0.0.0 表示监听所有网络接口
+  host: "0.0.0.0"
+  # 服务器端口号
+  port: 8000
+  
+  # Neo4j 图数据库配置
+  neo4j:
+    # 数据库连接 URI
+    uri: "bolt://localhost:7687"
+    # 数据库用户名
+    user: "neo4j"
+    # 数据库密码
+    password: "all-in-rag"
+    # 使用的数据库名称
+    database: "neo4j"
+  
+  # Milvus 向量数据库配置
+  milvus:
+    # 数据库主机地址
+    host: "localhost"
+    # 数据库端口号
+    port: 19530
+    # 集合名称（类似于表名）
+    collection_name: "cooking_knowledge"
+    # 向量维度（嵌入模型输出的维度）
+    dimension: 512
+  
+  # 模型配置
+  models:
+    # 嵌入模型路径：用于将文本转换为向量
+    embedding_model: "F:/datawhale/ALL-in-RAG/models/bge/bge-small-zh-v1.5"
+    # LLM 模型名称（从 .env 中读取 LLM_MODEL，默认值）
+    llm_model: "kimi-k2-0711-preview"
+  
+  # 检索配置
+  retrieval:
+    # 返回的最相关文档数量
+    top_k: 5
+    # 文本分块大小
+    chunk_size: 500
+    # 分块之间的重叠字符数
+    chunk_overlap: 50
+    # 图遍历的最大深度
+    max_graph_depth: 2
+  
+  # 生成配置
+  generation:
+    # 生成温度：0.1 表示更确定性的输出
+    temperature: 0.1
+    # 最大生成令牌数
+    max_tokens: 2048
+
+# 前端配置
+frontend:
+  # 前端应用端口号
+  port: 7860
+  # API 配置
+  api:
+    # 后端 API 基础 URL
+    base_url: "http://localhost:8000"
+    # 请求超时时间（毫秒）
+    timeout: 120000
+
+# 日志配置
+logging:
+  # 日志级别：INFO、DEBUG、WARNING、ERROR
+  level: "INFO"
+  # 日志格式
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+# 开发环境配置
+development:
+  # 调试模式
+  debug: false
+  # CORS 允许的源列表
+  cors_origins:
+    - "http://localhost:7860"
+    - "http://127.0.0.1:7860"
