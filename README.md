@@ -773,4 +773,12 @@ MIT
 
 ---
 
+## 致谢
+
+### 📚 教程项目
+
+- **[Datawhale/all-in-rag](https://github.com/datawhalechina/all-in-rag)** - 大模型应用开发实战：RAG技术全栈指南
+
+- **[Anduin2017/HowToCook](https://github.com/Anduin2017/HowToCook)** - 程序员在家做饭方法指南
+
 **最后更新**: 2025 年 11 月
